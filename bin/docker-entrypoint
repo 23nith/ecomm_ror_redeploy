@@ -3,7 +3,7 @@
 # If running the rails server then execute the start_server.sh script
 if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
  # Adjusted path to navigate from bin to the root directory
- ../start_server.sh
+ ./start_server.sh
 else
  # For any other command, execute it as is
  exec "${@}"
