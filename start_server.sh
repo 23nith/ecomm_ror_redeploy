@@ -14,6 +14,11 @@ if [ -f tmp/pids/server.pid ]; then
     rm tmp/pids/server.pid
 fi
 
-# Start your Rails application
-echo "Starting Rails server..."
-exec bin/rails server -b 0.0.0.0 -p $PORT
+# Attempt to start the Rails server
+echo "Attempting to start Rails server on port $PORT..."
+if ! bin/rails server -b 0.0.0.0 -p $PORT; then
+    echo "Failed to start Rails server. Check the logs for more details."
+    exit 1
+fi
+
+echo "Rails server started successfully."
