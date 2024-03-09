@@ -21,5 +21,4 @@ if ! bin/rails server -b 0.0.0.0 -p $PORT; then
     exit 1
 fi
 
-
 echo "Rails server started successfully."
