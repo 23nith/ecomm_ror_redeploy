@@ -14,6 +14,10 @@ if [ -f tmp/pids/server.pid ]; then
     rm tmp/pids/server.pid
 fi
 
+# Prepare the database
+echo "Preparing the database..."
+./bin/rails db:prepare
+
 # Attempt to start the Rails server
 echo "Attempting to start Rails server on port $PORT..."
 if ! bin/rails server -b 0.0.0.0 -p $PORT; then
