@@ -1,0 +1,18 @@
+{
+    "$schema": "https://railway.app/railway.schema.json",
+    "build": {
+      "builder": "NIXPACKS"
+    },
+    "deploy": {
+      "command": "bin/rails server -b 0.0.0.0 -p $PORT",
+      "restartPolicyType": "ON_FAILURE",
+      "restartPolicyMaxRetries": 3
+    },
+    "environments": {
+      "production": {
+        "variables": {
+          "RAILS_ENV": "production"
+        }
+      }
+    }
+  }
